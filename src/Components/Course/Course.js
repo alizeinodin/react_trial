@@ -11,10 +11,11 @@ export default function Course(props) {
     let navigate = useNavigate();
 
     function handleClick() {
-        navigate('course/' + props.course.id, {state: props.level.courses});
+        navigate(props.course.id + '/segment', {state: props.course.id});
     }
 
-    return (<Container className="App" maxWidth="sm">
+    return (
+        <Container className="App" maxWidth="sm">
             <Card sx={{maxWidth: 365}} onClick={handleClick}>
                 <CardActionArea>
                     <CardMedia
@@ -34,5 +35,6 @@ export default function Course(props) {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </Container>);
+        </Container>
+    );
 }
