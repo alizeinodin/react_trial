@@ -17,10 +17,18 @@ const darkTheme = createTheme({
     },
 });
 
+const lightTheme = createTheme({
+    palette: {
+        background: {
+            default: "#f1f1f1"
+        }
+    },
+});
+
 function App() {
     return (
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
+        <ThemeProvider theme={lightTheme}>
+            <CssBaseline/>
             <div>
                 <Routes>
                     <Route path='/' element={<Levels/>}/>
