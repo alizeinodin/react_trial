@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+// import { Route, Routes } from 'react-router-dom';
+// import Courses from "./Components/Courses";
+// import { Grid } from '@mui/material';
+import Levels from "./Components/Level/Levels";
+import {Route, Routes} from "react-router-dom";
+import Courses from "./Components/Course/Courses";
+import Course from "./Components/Course/Course";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Routes>
+                <Route path='/' element={<Levels/>}/>
+
+                <Route path='/course' element={<Courses/>}/>
+                <Route path='/course/:courseId' element={<Course/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
