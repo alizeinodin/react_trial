@@ -2,6 +2,7 @@ import * as React from 'react';
 import {lazy, useEffect, useState} from 'react';
 import {CircularProgress, Grid} from "@mui/material";
 import axios from '../../axios'
+
 const Level = lazy(() => import('./Level'));
 
 export default function (props) {
@@ -31,21 +32,22 @@ export default function (props) {
 
     return (
         loading ? (
-            <div className="center-container">
-                <CircularProgress/>
-            </div>
-        ) : <Grid
-            container
-            pt={20}
-            spacing={{xs: 2, md: 3}}
-            columns={{xs: 4, sm: 8, md: 12}}
-            alignItems="center"
-            justifyContent="center"
-        >
-            {levels.map((level, index) => (<Grid item xs={4} sm={4} md={3} key={index}>
-                <Level level={level}/>
-            </Grid>))}
-        </Grid>
+                <div className="center-container">
+                    <CircularProgress/>
+                </div>
+            ) :
+            <Grid
+                container
+                pt={20}
+                spacing={{xs: 2, md: 3}}
+                columns={{xs: 4, sm: 8, md: 12}}
+                alignItems="center"
+                justifyContent="center"
+            >
+                {levels.map((level, index) => (<Grid item xs={4} sm={4} md={3} key={index}>
+                    <Level level={level}/>
+                </Grid>))}
+            </Grid>
 
     )
         ;
