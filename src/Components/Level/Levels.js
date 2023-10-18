@@ -10,7 +10,7 @@ export default function (props) {
     const [loading, setLoading] = useState(true);
 
     useEffect((levels) => {
-        axios.get('en/level/reference')
+        axios.get('level/reference')
             .then(function (response) {
                 console.log(response);
                 setLevels(response.data);
